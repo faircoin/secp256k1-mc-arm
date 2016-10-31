@@ -168,9 +168,9 @@ if test x"$use_ecmult_static_precomputation" != x"no"; then
   cross_compiling=$save_cross_compiling
 
   if test x"$working_native_cc" = x"no"; then
-    set_precomp=no
+    set_precomp=yes
     if test x"$use_ecmult_static_precomputation" = x"yes";  then
-      AC_MSG_ERROR([${CC_FOR_BUILD} does not produce working binaries. Please set CC_FOR_BUILD])
+      AC_MSG_RESULT([${CC_FOR_BUILD} does not produce working binaries. Please set CC_FOR_BUILD])
     else
       AC_MSG_RESULT([${CC_FOR_BUILD} does not produce working binaries. Please set CC_FOR_BUILD])
     fi

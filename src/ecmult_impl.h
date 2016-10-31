@@ -23,7 +23,7 @@
 #define WINDOW_G 15
 #else
 /** One table for window size 16: 1.375 MiB. */
-#define WINDOW_G 16
+#define WINDOW_G 2
 #endif
 
 /** The number of entries a table with precomputed multiples needs to have. */

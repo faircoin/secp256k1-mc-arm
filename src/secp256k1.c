@@ -548,6 +548,20 @@ int secp256k1_ec_pubkey_combine(const secp256k1_context* ctx, secp256k1_pubkey *
     return 1;
 }
 
+int secp256k1_hash_sha256(const secp256k1_context* ctx, unsigned char *out, const unsigned char *data, size_t n) {
+    secp256k1_sha256_t hasher;
+
+    ARG_CHECK(data != NULL);
+    ARG_CHECK(out != NULL);
+    ARG_CHECK(n >= 1);
+
+    secp256k1_sha256_initialize(&hasher);
+    secp256k1_sha256_write(&hasher, data, n);
+    secp256k1_sha256_finalize(&hasher, out);
+
+    return 1;
+}
+
 #ifdef ENABLE_MODULE_ECDH
 # include "modules/ecdh/main_impl.h"
 #endif
